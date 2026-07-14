@@ -31,7 +31,7 @@
 **1. 克隆并构建**（构建产物仅在本地生成，仓库里不提交 `dist/`）：
 
 ```bash
-git clone <本项目 GitHub 地址>     # ← 替换成你的仓库地址
+git clone https://github.com/luckinbyte/handwriting.git
 cd handwriting
 pnpm install
 pnpm build                          # 生成 packages/*/dist

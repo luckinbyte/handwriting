@@ -16,7 +16,7 @@
 
 ```bash
 # 1) 克隆并构建（dist 只在本地生成）
-git clone <本项目 GitHub 地址>
+git clone https://github.com/luckinbyte/handwriting.git
 cd handwriting && pnpm install && pnpm build
 ```
 
