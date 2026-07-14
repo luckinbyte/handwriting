@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@handwriting/core · 流式手写 demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="demos">
+        <a href="./index.html" class="active">vanilla</a>
+        <a href="./react.html">React</a>
+        <a href="./wc.html">Web Component</a>
+      </nav>
+      <h1>handwriting <span>· 流式手写 demo</span></h1>
+      <p class="subtitle">
+        LLM 流式文本 → 中文一笔一划真笔顺（hanzi-writer）+ 英文逐字符渐显。
+        试一下选中文字、Ctrl+F 搜索、复制 —— 文本层让它全都可用。
+      </p>
+      <div class="controls">
+        <div class="group">
+          <span class="label">节奏预设</span>
+          <button data-preset="auto" class="preset active">auto</button>
+          <button data-preset="fluid" class="preset">fluid</button>
+          <button data-preset="realistic" class="preset">realistic</button>
+        </div>
+        <div class="group">
+          <span class="label">示例</span>
+          <button id="sampleShort" class="active">短文</button>
+          <button id="sampleLong">长文 10k</button>
+        </div>
+        <div class="group">
+          <button id="start">▶ 重播</button>
+          <button id="pause">⏸ 暂停</button>
+          <button id="skip">⏭ 跳到结尾</button>
+          <button id="reset">清空</button>
+        </div>
+        <div class="group">
+          <label class="slider">
+            吐字间隔 <input id="speed" type="range" min="20" max="800" value="140" />
+            <span id="speedVal"></span>
+          </label>
+          <label class="slider">
+            字号 <input id="fontSize" type="range" min="14" max="56" value="24" />
+            <span id="fontSizeVal"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+    <main>
+      <article id="reader" class="reader"></article>
+    </main>
+    <div id="stats" class="stats" aria-live="off"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

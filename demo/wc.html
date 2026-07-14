@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@handwriting/wc · demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="demos">
+        <a href="./index.html">vanilla</a>
+        <a href="./react.html">React</a>
+        <a href="./wc.html" class="active">Web Component</a>
+      </nav>
+      <h1>handwriting <span>· Web Component demo</span></h1>
+      <p class="subtitle">
+        <code>&lt;handwriting-stream&gt;</code> —— 框架无关的自定义元素。同样支持选中 / Ctrl+F / 复制。
+      </p>
+      <div class="controls">
+        <div class="group">
+          <span class="label">节奏预设</span>
+          <button data-preset="auto" class="preset active">auto</button>
+          <button data-preset="fluid" class="preset">fluid</button>
+          <button data-preset="realistic" class="preset">realistic</button>
+        </div>
+        <div class="group">
+          <button id="start">▶ 重播</button>
+          <button id="skip">⏭ 跳到结尾</button>
+          <button id="reset">清空</button>
+        </div>
+        <div class="group">
+          <span class="label">示例</span>
+          <button id="sampleShort" class="active">短文</button>
+          <button id="sampleLong">长文 10k</button>
+        </div>
+        <label class="slider">
+          字号
+          <input id="fontSize" type="range" min="14" max="56" value="24" />
+          <span id="fontSizeVal"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <handwriting-stream id="reader" class="reader"></handwriting-stream>
+    </main>
+    <div id="stats" class="stats" aria-live="off"></div>
+    <script type="module" src="./wc.ts"></script>
+  </body>
+</html>

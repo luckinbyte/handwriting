@@ -1,0 +1,152 @@
+:root {
+  --bg: #faf8f3;
+  --ink: #2b2620;
+  --muted: #8a8074;
+  --line: #e6dfd2;
+  --accent: #c0563a;
+  --paper: #fffdf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+header {
+  padding: 28px 32px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.demos {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+.demos a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.demos a:hover {
+  color: var(--ink);
+  border-color: var(--line);
+}
+.demos a.active {
+  color: #fff;
+  background: var(--accent);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+h1 span {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.subtitle {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 70ch;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+.group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+button {
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+button:hover {
+  border-color: var(--muted);
+}
+button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.slider {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.slider span {
+  min-width: 44px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+main {
+  padding: 36px 32px 80px;
+}
+
+.reader {
+  max-width: 70ch;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 40px 44px;
+  min-height: 50vh;
+  color: var(--ink);
+  /* baseline correction for the Hanzi square cells */
+  --hw-baseline-offset: -0.1em;
+}
+
+/* Live virtualization stats: total cells vs live (non-recycled). */
+.stats {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 10;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  user-select: none;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@handwriting/core",
+  "version": "0.1.0",
+  "description": "Framework-agnostic streaming handwriting animation engine — Chinese stroke order (via hanzi-writer) + Latin fade.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["handwriting", "stroke-order", "hanzi-writer", "streaming", "animation", "chinese"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "sideEffects": ["**/*.css"],
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "hanzi-writer": "^3.7.0"
+  },
+  "peerDependenciesMeta": {
+    "hanzi-writer": { "optional": true }
+  },
+  "devDependencies": {
+    "hanzi-writer": "^3.7.3"
+  }
+}

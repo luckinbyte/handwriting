@@ -1,0 +1,41 @@
+{
+  "name": "@handwriting/react",
+  "version": "0.1.0",
+  "description": "React hook for @handwriting/core — streaming handwriting (Chinese stroke order + Latin fade).",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["handwriting", "stroke-order", "hanzi-writer", "streaming", "react", "hook"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@handwriting/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@handwriting/core": "workspace:*",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

@@ -1,0 +1,69 @@
+/*
+ * @handwriting/core default styles.
+ * Consumers can import '@handwriting/core/styles.css' and override any of these.
+ *
+ * Layout strategy (dual-track per cell):
+ *   .hw-text   — in-flow, carries the real character with color:transparent
+ *                (invisible but selectable; ::selection highlight shows).
+ *   .hw-visual — absolutely overlaid on top, paints the animation, and has
+ *                pointer-events:none so pointer/selection fall through to the text.
+ */
+
+.hw-root {
+  font-size: 1em;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.hw-cell {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+/* In-flow selectable text layer. Transparent glyph, but selection highlight renders. */
+.hw-text {
+  color: transparent;
+  user-select: text;
+  white-space: pre;
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* Animation layer overlaid on top; pointer events pass through to the text below. */
+.hw-visual {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Hanzi: a 1em square (the CJK glyph is itself 1em). Nudge for visual baseline. */
+.hw-cell--hanzi {
+  vertical-align: var(--hw-baseline-offset, -0.12em);
+}
+.hw-cell--hanzi .hw-visual > svg,
+.hw-cell--hanzi .hw-visual > canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* tegaki-style stroke SVG: height tracks the font, width follows the glyph. */
+.hw-stroke-svg {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  overflow: visible;
+}
+
+/* Layout-only cells. */
+.hw-cell--space,
+.hw-cell--newline {
+  /* no visual */
+}
